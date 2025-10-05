@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AetherCast</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+<div class="wrap">
+  <div class="app">
+    <aside class="panel">
+      <div class="brand">
+        <img src="img/logo.png" class="logo" alt="">
+        <div>
+          <h1>AetherCast</h1>
+          <div class="lead">Global Weather Intelligence System</div>
+        </div>
+      </div>
+      <div class="search">
+        <input id="cityInput" placeholder="City, State, Country..." autocomplete="off">
+        <button id="searchBtn" class="btn"><i class="fas fa-search"></i> Search</button>
+      </div>
+      <div class="loc-container">
+          <button id="locBtn" class="small-btn"><i class="fas fa-location-arrow"></i> My Location</button>
+      </div>
+      <div class="meta">
+        <div class="chip">Units: 
+          <select id="units">
+            <option value="metric" selected>°C (Metric)</option>
+            <option value="imperial">°F (Imperial)</option>
+          </select>
+        </div>
+        <div class="chip">Lang: 
+          <select id="lang">
+            <option value="en" selected>EN (English)</option>
+            <option value="hi">HI (Hindi)</option>
+            <option value="fr">FR (French)</option>
+          </select>
+        </div>
+      </div>
+      <div id="err" class="error"></div>
+      <small class="footer">Using OpenWeatherMap for core data.</small>
+    </aside>
+    <main class="main">
+      <section class="current panel">
+        <div id="currentData">
+          <div class="loading-data"><i class="fas fa-globe"></i> Click "My Location" or Search for a City!</div>
+        </div>
+      </section>
+      <section class="panel">
+          <h3>Selected Cities Overview</h3>
+          <div id="citiesOverviewList" class="forecast-grid">
+              <div class="loading-data"><i class="fas fa-city"></i> Loading city overview...</div>
+          </div>
+      </section>
+      <section class="panel">
+        <h3>5-Day Forecast</h3>
+        <div id="forecastList" class="forecast-grid">
+          <div class="loading-data"><i class="fas fa-chart-line"></i> No Data Loaded.</div>
+        </div>
+      </section>
+      <footer>
+        <marquee direction="left">
+            <p>&copy; Bhavesh Pawar. All Rights Reserved</p>
+        </marquee>
+      </footer>
+    </main>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
